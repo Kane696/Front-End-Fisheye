@@ -3,7 +3,7 @@
         return fetch('./data/photographers.json').then(response => {
             return response.json();
         }).then(data => {
-            return data;
+            return {photographers: [...data.photographers]};
         }).catch(err => {
             console.log(err);
         });
@@ -21,10 +21,8 @@
     };
 
     async function init() {
-        // Récupère les datas des photographes
+        // Get photographers data
         const { photographers } = await getPhotographers();
-        // console.log(await getPhotographers())
-
         displayData(photographers);
     };
     

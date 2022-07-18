@@ -6,7 +6,7 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const link = document.createElement( 'a' );
-        // link.setAttribute("href", "")
+        link.setAttribute("href", "http://127.0.0.1:5500/Front-End-Fisheye/photographer.html?id="+id);
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         img.setAttribute("alt", "");
