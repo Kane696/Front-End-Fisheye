@@ -2,10 +2,59 @@
     display: none;
 }
 
-.photograph-header {
+.photographer-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 150px;
+    margin: 0px 100px 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 50px;
+}
+
+.photographer-header__infos img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.photographer-section__portfolio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 100px;
+}
+
+.photographer-section__portfolio article img,
+.photographer-section__portfolio article video {
+    height: 300px;
+    width: 350px;
+}
+
+.photographer-section__portfolio article div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.photographer-section__portfolio article div h3{
+    color: #901C1C;
+}
+
+.photographer-section__portfolio article div p::after{
+    content: ' \f004';
+    font-family: FontAwesome;
+    color: #901C1C;
+}
+
+.photographer-encart{
+    background-color: #DB8876;
+    width: 376px;
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    padding: 10px 30px;
 }
 
 .contact_button {

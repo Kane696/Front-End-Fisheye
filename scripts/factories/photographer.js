@@ -20,12 +20,20 @@ function photographerFactory(data) {
         p1.textContent = tagline;
         const p2 = document.createElement('p');
         p2.textContent = price + '€/jour';
-        article.appendChild(link);
-        article.appendChild(h3);
-        article.appendChild(p1);
-        article.appendChild(p2);
+        
+        let arr = [];
+        arr =[link, h3, p1, p2];
+        appendElement(article, arr);
+        
 
         return (article);
     }
+
     return { name, id, city, country, tagline, price, picture, getUserCardDOM }
+}
+
+function appendElement(parent, arr){
+    arr.forEach(element => {
+        parent.appendChild(element)
+    });
 }
