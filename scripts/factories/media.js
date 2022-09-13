@@ -1,5 +1,6 @@
 function mediaFactory(data, photographer) {
     const { id, photographerId, title, image, likes, date, price, video } = data;
+    sessionStorage.setItem("photographerName", photographer.name);
 
     const photographerName = photographer.name.split(' ')[0];
     const picture = `assets/photographers/Photographers-ID-Photos/${photographer.portrait}`;
@@ -74,21 +75,17 @@ function mediaFactory(data, photographer) {
 
     function getEncart(){
 
-    //     const initialValue = 0;
-    //     const sumWithInitial = arr.reduce(
-    //     (previousValue, currentValue) => previousValue + currentValue,
-    //     initialValue
-    //     );
-    
-    //     console.log(sumWithInitial);
-
-        
-
+        const div = document.createElement('div');
+        div.classList.add('photographer-encart__container');
         const p1 = document.createElement('p');
         p1.textContent = likes;
         const p2 = document.createElement('p');
         p2.textContent = photographer.price + '€ / jour';
-        return (p2);
+
+        let encartArr = [];
+        encartArr = [p1, p2];
+        appendElement(div, encartArr);
+        return (div);
     }
 
    
@@ -109,10 +106,3 @@ function appendElement(parent, arr){
         parent.appendChild(element);
     });
 }
-
-
-// function insertElementBefore(parent, arr, elementBefore){
-//     arr.forEach(element => {
-//         parent.insertBefore(element, elementBefore);
-//     });
-// }
