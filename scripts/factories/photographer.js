@@ -32,8 +32,3 @@ function photographerFactory(data) {
     return { name, id, city, country, tagline, price, picture, getUserCardDOM }
 }
 
-function appendElement(parent, arr){
-    arr.forEach(element => {
-        parent.appendChild(element)
-    });
-}

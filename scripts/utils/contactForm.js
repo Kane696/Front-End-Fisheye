@@ -1,11 +1,11 @@
 const body = document.querySelector("#body");
-const main = document.querySelector("#main");
 
 const modal = document.querySelector(".modal");
-const contactModal = document.querySelector('#contact_modal');
-const contactBtn = document.querySelector('.contact_button');
-const modalHeader = document.querySelector(".modal-header");
-const closeBtn = document.querySelector('#close-modal__btn');
+const myModal = document.querySelector('#myModal');
+const modalTitle = document.querySelector("#modal-title");
+const openModalBtn = document.querySelector('.open-modal__btn');
+const closeModalBtn = document.querySelector('.close-modal__btn');
+const submitBtn = document.querySelector('#submit__btn');
 
 const form = document.querySelector('form');
 const firstName = document.getElementById("prenom");
@@ -13,37 +13,64 @@ const lastName = document.querySelector("#nom");
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
 
-// Close modal when button is clickeds
-closeBtn.addEventListener('click', closeModal);
+// add all the elements inside modal which you want to make focusable
+const  focusableElements = 'button, input, textarea, [tabindex]:not([tabindex="-1"])';
+
+// Get first element to be focused inside modal
+const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+const focusableContent = modal.querySelectorAll(focusableElements);
+
+// Get last element to be focused inside modal
+const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+// Open modal when button is clicked
+openModalBtn.addEventListener('click', openModal);
+
+// Close modal when button is clicked
+closeModalBtn.addEventListener('click', closeModal);
 
 // Close modal when escape key is pressed
 document.addEventListener('keydown', (e) => {
     const keyCode = e.keyCode ? e.keyCode : e.which
-    if (modal.getAttribute('aria-hidden') === 'false' && keyCode === 27) {
+    if (keyCode === 27) {
         closeModal();
     }
 });
 
-function displayModal() {
-    const photographerName = sessionStorage.getItem('photographerName');
-    const h2 = document.createElement('h2');
-    h2.textContent = photographerName;
-    modalHeader.appendChild(h2);
-    main.setAttribute('aria-hidden', 'false');
-    modal.setAttribute('aria-hidden', 'true');
-    // body.classList.add('no-scroll');
-    contactModal.style.display = "block";
-	
-    closeBtn.focus();
+function openModal(){
+    body.classList.add('no-scroll');
+    myModal.style.display = "block";
+
+    document.addEventListener('keydown', function(e) {
+        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+        if (!isTabPressed) {
+            return;
+        }
+        // If shift key pressed for shift + tab combination
+        if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+                // Add focus for the last focusable element
+                lastFocusableElement.focus();
+                e.preventDefault();
+            }
+        // If tab key is pressed
+        } else {
+            // If focused has reached to last focusable element then focus first focusable element after pressing tab
+            if (document.activeElement === lastFocusableElement) {
+                // Add focus for the first focusable element
+                firstFocusableElement.focus();
+                e.preventDefault();
+            }
+        }
+    });
+
+    firstFocusableElement.focus();  
 }
 
 function closeModal() {
-    main.setAttribute('aria-hidden', 'true');
-    modal.setAttribute('aria-hidden', 'false');
-    body.classList.remove('no-scroll');
-    contactModal.style.display = "none";
-    contactBtn.focus();
-    // location.reload();
+    myModal.style.display = "none";
+    openModalBtn.focus();
+    form.reset();
 }
 
 
@@ -96,7 +123,7 @@ function validateEmail(email){
 }
 
 function validateMessage(message){
-    if(lastName.value.length === 0 ){
+    if(message.value.length === 0 ){
         displayError(message, "Veuillez entrer votre message");
         return false;
     } else {
@@ -114,7 +141,7 @@ function displayError(input, msg){
     input.parentElement.dataset.error = msg;
 }
 
-// Display sucess message
+// Display success message
 function displaySuccess(input){
    // display error border
     input.parentElement.dataset.errorVisible = "false";
