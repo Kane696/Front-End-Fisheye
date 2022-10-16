@@ -1,5 +1,9 @@
 @import url("photographer.css");
 
+*:focus{
+    outline: 2px solid black;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
@@ -22,6 +26,7 @@ h1 {
     margin-right: 100px;
 }
 
+
 .logo {
     width: 200px;
     height: 50px;
@@ -30,7 +35,7 @@ h1 {
 
 .photographer_section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
     gap: 70px;
     margin-top: 100px;
 }
@@ -38,12 +43,12 @@ h1 {
 .photographer_section article {
     justify-self: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.photographer_section article a {
+.photographer_section article a{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,9 +59,10 @@ h1 {
 .photographer_section article a h2 {
     color: #D3573C;
     font-size: 36px;
+    margin: 20px 0px 8px 0px;
 }
 
-.photographer-portrait{
+.photographer-portrait {
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -64,14 +70,14 @@ h1 {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-.photographer_section article div{
+.photographer_section article div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.photographer_section article div h3{
+.photographer_section article div h3 {
     color: #901C1C;
     font-size: 13px;
     margin: 5px 0px;
@@ -82,6 +88,6 @@ h1 {
     margin: 5px 0px;
 }
 
-.photographer_section article div p:nth-of-type(2){
+.photographer_section article div p:nth-of-type(2) {
     color: #757575;
 }
