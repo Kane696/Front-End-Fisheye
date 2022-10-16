@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html" tabindex="0">
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye page d'accueil"/>
+      </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <div class="photographer-header">
+        <button class="contact_button">Contactez-moi</button>
       </div>
+      <section class="photographer-section__portfolio"></section>
+      <div class="photographer-encart"></div>
     </main>
-    <div id="contact_modal">
+    <div class="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" />
         </header>
 				<form>
 					<div>
@@ -31,7 +40,36 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <div class="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" id="lightbox">
+      <div class="lightbox-modal">
+        <img src="assets/icons/close-red.svg" class="close-lightbox__btn" role="button" data-dismiss="contact_modal" aria-label="close"/>
+        <button class="btn btn-prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="btn btn-next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+      <!--Models-->
+      <script src="scripts/models/Photographer.js"></script>
+      <script src="scripts/models/Medias.js"></script>
+
+      <!--Templates-->
+      <script src="scripts/templates/PhotographerCard.js"></script>
+      <script src="scripts/templates/PhotographerHeader.js"></script>
+      <script src="scripts/templates/PhotographerMedias.js"></script>
+      <script src="scripts/templates/LightBoxModal.js"></script>
+
+      <!--Utils-->
+      <script src="scripts/utils/LightBox.js"></script>
+
+      <!--Api-->
+    <script src="scripts/api/Api.js"></script>
+
+    <!--Entry point-->
+    <script src="scripts/Index.js"></script>
+    <!-- <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script> -->
   </body>
 </html>

@@ -1,11 +1,57 @@
-#contact_modal {
+/* #contact_modal {
     display: none;
+} */
+
+.photographer-header {
+    background-color: #FAFAFA;
+    height: 150px;
+    margin: 0px 100px 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 50px;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
+.photographer-section__portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 100px;
+}
+
+.media-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-link img,
+.media-link video {
+    height: 300px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.photographer-section__portfolio article div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.photographer-section__portfolio article div h3 {
+    color: #901C1C;
+}
+
+.media-likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-likes i {
+    margin-left: 7px;
+    color: #901C1C;
 }
 
 .contact_button {
@@ -19,6 +65,18 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.contact_modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal {
@@ -73,4 +131,75 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+
+.lightbox-modal{
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    width: 60%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin: auto;
+    position: relative;
+}
+
+/* .lightbox-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} */
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 35Opx;
+    position: absolute;
+}
+
+.lightbox-modal .btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.close-lightbox__btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.lightbox-modal .btn-prev {
+    top: 45%;
+    left: 2%;
+}
+
+.lightbox-modal .btn-next {
+    top: 45%;
+    right: 2%;
+}
+
+.lightbox-modal__img{
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.active {
+    display: block;
 }
