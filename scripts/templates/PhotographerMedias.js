@@ -19,7 +19,7 @@ class PhotographerMedias {
                         <p tabindex="0">${this._media.title}</p>
                         <div class="media-likes">
                             <p tabindex="0">${this._media.likes}</p>
-                            <i class="fa-solid fa-heart" aria-label="likes"></i>
+                            <i class="fa-regular fa-heart like" aria-label="likes"></i>
                         </div>
                     </div>
                 `
@@ -34,7 +34,7 @@ class PhotographerMedias {
                         <p tabindex="0">${this._media.title}</p>
                         <div class="media-likes">
                             <p tabindex="0">${this._media.likes}</p>
-                            <i class="fa-solid fa-heart" aria-label="likes"></i>
+                            <i class="fa-regular fa-heart like" aria-label="likes"></i>
                         </div>
                     </div>
                 `

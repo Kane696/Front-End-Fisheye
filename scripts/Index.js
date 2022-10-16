@@ -3,6 +3,7 @@ class Index {
         this.photographerSection = document.querySelector('.photographer_section')
         this.photographerHeader = document.querySelector('.photographer-header')
         this.photographerSectionPortfolio  = document.querySelector('.photographer-section__portfolio')
+        this.main = document.querySelector('#main')
         this.lightBox  = document.querySelector('#lightbox')
         this.photographerApi = new PhotographerApi('/data/photographers.json')
         this.mediasApi = new MediasApi('/data/photographers.json')
@@ -39,12 +40,19 @@ class Index {
                 // Create photographer media template
                 const PhotographerMediasTemplate = new PhotographerMedias(photographer, media)
                 this.photographerSectionPortfolio.appendChild(PhotographerMediasTemplate.getPhotographerMediasCard())
-
             });
+
+                // Create photographer encart template
+                const PhotographerEncartTemplate = new PhotographerEncart(photographer);
+                this.main.appendChild(PhotographerEncartTemplate.getPhotographerEncartDOM());
                 // Create lightbox
                 let lightBox = new LightBox(photographer);
                 lightBox.mediaClick();
                 lightBox.closeBtnClick();
+
+                let likes = new Likes()
+                likes.updateLike();
+
         }
     };
 }
