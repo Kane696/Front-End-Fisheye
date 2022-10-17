@@ -1,5 +1,9 @@
 @import url("photographer.css");
 
+/************
+****** GENERAL
+*************/
+
 *:focus{
     outline: 2px solid black;
 }
@@ -13,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+/************
+****** HEADER
+*************/
+
 header {
     display: flex;
     flex-direction: row;
@@ -21,26 +29,33 @@ header {
     height: 90px;
 }
 
-h1 {
+header a {
+    margin-left: 100px;
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+}
+
+header h1 {
     color: #901C1C;
     margin-right: 100px;
 }
 
 
-.logo {
-    width: 200px;
-    height: 50px;
-    margin-left: 100px;
-}
+/************
+****** PHOTOGRAPHERS
+*************/
 
-.photographer_section {
+.photographers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 70px;
     margin-top: 100px;
 }
 
-.photographer_section article {
+.photographers article {
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -48,18 +63,20 @@ h1 {
     align-items: center;
 }
 
-.photographer_section article a{
+.photographers article a{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-
-.photographer_section article a h2 {
-    color: #D3573C;
+.photographers article a h2 {
     font-size: 36px;
     margin: 20px 0px 8px 0px;
+}
+
+.photographer-name {
+    color: #D3573C;
 }
 
 .photographer-portrait {
@@ -70,24 +87,27 @@ h1 {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-.photographer_section article div {
+.photographers article div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.photographer_section article div h3 {
-    color: #901C1C;
+.photographers article div h3 {
     font-size: 13px;
+}
+
+.photographer-city {
+    color: #901C1C;
     margin: 5px 0px;
 }
 
-.photographer_section article div p{
+.photographers article div p{
     font-size: 10px;
     margin: 5px 0px;
 }
 
-.photographer_section article div p:nth-of-type(2) {
+.photographers article div p:nth-of-type(2) {
     color: #757575;
 }

@@ -1,6 +1,6 @@
-/* #contact_modal {
-    display: none;
-} */
+/************
+****** PHOTOGRAPHER HEADER
+*************/
 
 .photographer-header {
     background-color: #FAFAFA;
@@ -13,6 +13,23 @@
     padding: 50px;
 }
 
+.photographer-header__infos h1 {
+    max-width: 500px;
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.photographer-header__infos p {
+    color: #757575;
+}
+
+#open-modal__btn:hover,
+#open-modal__btn:focus{
+    background-color: #DB8876;
+    color: black;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
 
 .photographer-header__infos img {
     height: 200px;
@@ -20,6 +37,10 @@
     border-radius: 50%;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+
+/************
+****** MEDIA SORT
+*************/
 
 .media-sort__container {
     width: 200px;
@@ -46,6 +67,10 @@
 #media-select option{
     border-bottom: 1px solid white;
 }
+
+/************
+****** PHOTOGRAPHER PORTFOLIO
+*************/
 
 .photographer-section__portfolio {
     display: flex;
@@ -98,21 +123,6 @@
     color: #901C1C;
 }
 
-.photographer-encart {
-    display: flex;
-    justify-content: space-between;
-    background-color: #DB8876;
-    width: 376px;
-    position: fixed;
-    bottom: 0px;
-    right: 30px;
-    padding: 10px 20px;
-}
-
-.photographer-encart__likes {
-    margin-left: 7px;
-}
-
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -126,12 +136,6 @@
     cursor: pointer;
 }
 
-.open-modal__btn:hover,
-.open-modal__btn:focus{
-    background-color: #DB8876;
-    color: black;
-    box-shadow: 0px 4px 4px 0px #00000040;
-}
 
 .contact_modal{
     display: none;
@@ -246,14 +250,6 @@ form textarea {
     position: relative;
 }
 
-/* .lightbox-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-} */
-
 .slide {
     display: flex;
     flex-direction: column;
@@ -302,3 +298,21 @@ form textarea {
     display: block;
 }
 
+/************
+****** PHOTOGRAPHER ENCART
+*************/
+
+.photographer-encart {
+    display: flex;
+    justify-content: space-between;
+    background-color: #DB8876;
+    width: 376px;
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    padding: 10px 20px;
+}
+
+.photographer-encart__likes {
+    margin-left: 7px;
+}

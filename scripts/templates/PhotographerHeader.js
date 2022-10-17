@@ -6,9 +6,9 @@ class PhotographerHeader {
     getUserHeaderDOM() {
         const div = document.createElement( 'div' );
         const photographerInfos = `
-            <div>
-                <h1 tabindex="O">${this._photographer.name}</h1>
-                <p>${this._photographer.city}, ${this._photographer.country}</p>
+            <div class="photographer-header__infos">
+                <h1 class="photographer-name" tabindex="O">${this._photographer.name}</h1>
+                <h2 class="photographer-city">${this._photographer.city}, ${this._photographer.country}</h2>
                 <p>${this._photographer.tagline}</p>
             </div>
         `

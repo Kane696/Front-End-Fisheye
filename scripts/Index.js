@@ -1,7 +1,8 @@
 class Index {
     constructor() {
-        this.photographerSection = document.querySelector('.photographer_section')
+        this.photographerSection = document.querySelector('.photographers')
         this.photographerHeader = document.querySelector('.photographer-header')
+        this.contactBtn = document.querySelector('#open-modal__btn')
         this.photographerSectionPortfolio  = document.querySelector('.photographer-section__portfolio')
         this.main = document.querySelector('#main')
         this.lightBox  = document.querySelector('#lightbox')
@@ -30,7 +31,7 @@ class Index {
             // Create header template
             const PhotographerHeaderTemplate = new PhotographerHeader(photographer)
             this.photographerHeader.appendChild(PhotographerHeaderTemplate.getUserHeaderDOM())
-            this.photographerHeader.appendChild(PhotographerHeaderTemplate.getUserPortraitDOM())
+            this.photographerHeader.insertBefore(PhotographerHeaderTemplate.getUserPortraitDOM(), this.contactBtn)
 
             //Create media sort template
             let MediaSortTemplate = new SortContainer();
