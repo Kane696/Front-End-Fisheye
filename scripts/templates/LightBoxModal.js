@@ -10,7 +10,7 @@ class LightBoxModal {
         div.setAttribute('id', `${this._media.id}`)
         let photographerFirstname = this._photographer.name.split(' ')[0];
         let modal;
-    
+
 
         // Check wether the data is type image or video
         if(this._media.image){

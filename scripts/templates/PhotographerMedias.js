@@ -25,7 +25,7 @@ class PhotographerMedias {
                 `
             } else {
                 photographerCard = `
-                    <a href="#" class="media-link" aria-label="${this._media.title}">
+                    <a href="#" class="media-link" id="${this._media.id}" aria-label="${this._media.title}">
                         <video controls>
                             <source src="/assets/photographers/${photographerFirstname}/${this._media.video}">
                         </video> 

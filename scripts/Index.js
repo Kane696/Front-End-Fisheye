@@ -10,13 +10,11 @@ class Index {
     }
 
     async init() {
-
         let params = (new URL(document.location)).searchParams;
         let id = parseInt(params.get('id'));
 
         // Récupère les datas des photographes
         const photographersData = await this.photographerApi.getPhotographers();
-
         const mediasData = await this.mediasApi.getMedias();
 
         if(isNaN(id)){
@@ -34,6 +32,12 @@ class Index {
             this.photographerHeader.appendChild(PhotographerHeaderTemplate.getUserHeaderDOM())
             this.photographerHeader.appendChild(PhotographerHeaderTemplate.getUserPortraitDOM())
 
+            //Create media sort template
+            let MediaSortTemplate = new SortContainer();
+            this.main.insertBefore(MediaSortTemplate.getMediaSortDOM(), this.photographerSectionPortfolio);
+            
+            let tst = new MediasSort(photographer);
+            tst.getSelectValue();
 
             photographer.medias.forEach(item => {
                 const media = new Medias(item);
@@ -41,21 +45,20 @@ class Index {
                 const PhotographerMediasTemplate = new PhotographerMedias(photographer, media)
                 this.photographerSectionPortfolio.appendChild(PhotographerMediasTemplate.getPhotographerMediasCard())
             });
-
                 // Create photographer encart template
                 const PhotographerEncartTemplate = new PhotographerEncart(photographer);
                 this.main.appendChild(PhotographerEncartTemplate.getPhotographerEncartDOM());
-                // Create lightbox
+                // Create new lightbox
                 let lightBox = new LightBox(photographer);
                 lightBox.mediaClick();
                 lightBox.closeBtnClick();
 
-                let likes = new Likes()
+                // Create new like
+                let likes = new Likes();
                 likes.updateLike();
-
         }
     };
 }
 
-const index = new Index()
-index.init()
+const index = new Index();
+index.init();

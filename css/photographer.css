@@ -14,14 +14,40 @@
 }
 
 
-.photographer-header__infos img{
+.photographer-header__infos img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-.photographer-section__portfolio{
+.media-sort__container {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 100px 30px 100px;
+}
+
+#media-select {
+    width: 120px;
+    background-color: #901C1C;
+    padding: 11px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#media-select:focus {
+    outline: none;
+}
+
+#media-select option{
+    border-bottom: 1px solid white;
+}
+
+.photographer-section__portfolio {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

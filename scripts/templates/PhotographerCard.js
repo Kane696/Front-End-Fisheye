@@ -5,8 +5,6 @@ class PhotographerCard {
 
     getUserCardDOM(){
         const article = document.createElement( 'article' );
-
-        console.log(this._photographer.portrait.split('.')[0] + '.webp')
         const photographerCard = `
             <a href="http://127.0.0.1:5500/photographer.html?id=${this._photographer.id}">
                 <picture>
