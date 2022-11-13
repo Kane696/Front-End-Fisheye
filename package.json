@@ -1,0 +1,22 @@
+{
+  "name": "front-end-fisheye",
+  "version": "1.0.0",
+  "description": "## Démarrer le projet",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^8.27.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kane696/Front-End-Fisheye.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kane696/Front-End-Fisheye/issues"
+  },
+  "homepage": "https://github.com/Kane696/Front-End-Fisheye#readme"
+}

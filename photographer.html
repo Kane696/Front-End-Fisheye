@@ -10,38 +10,52 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Fisheye - photographe </title>
+    <title>Fisheye - Photographe </title>
   </head>
-  <body>
+  <body id="body">
     <header>
-      <a href="index.html" tabindex="0">
+      <a href="index.html">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye page d'accueil"/>
       </a>
     </header>
-    <main id="main">
+    <main id="main" aria-hidden="false">
       <div class="photographer-header">
         <button class="contact_button" id="open-modal__btn">Contactez-moi</button>
       </div>
       <section class="photographer-section__portfolio"></section>
     </main>
-    <div class="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" />
+    <div class="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" tabindex="-1" id="myModal">
+			<div class="modal" role="document">
+				<header class="modal-header">
+          <div class="modal-header__wrapper">
+              <h1 id="modal-title">Contactez-moi <br></h1>
+              <img src="assets/icons/close.svg" class="close-modal__btn" role="button" tabindex="0" data-dismiss="contact_modal" aria-label="close"/>
+          </div>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
+        <form method="post">
+          <div class="formData">
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom" id="prenom" class="text-control">
+          </div>
+          <div class="formData">
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" id="nom" class="text-control">
+          </div>
+          <div class="formData">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" class="text-control">
+          </div>
+          <div class="formData">
+              <label>Votre message</label>
+              <textarea name="message" id="message" cols="30" rows="10" class="text-control"></textarea>
+          </div>
+          <button class="contact_button" id="submit__btn" type="submit">Envoyer</button>
+      </form>
 			</div>
 		</div>
-    <div class="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" id="lightbox">
-      <div class="lightbox-modal">
-        <img src="assets/icons/close-red.svg" class="close-lightbox__btn" role="button" data-dismiss="contact_modal" aria-label="close"/>
+    <div class="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" tabindex="-1" id="lightbox">
+      <div class="lightbox-modal" role="document">
+        <img src="assets/icons/close-red.svg" class="close-lightbox__btn" tabindex="0" role="button" data-dismiss="contact_modal" aria-label="close"/>
         <button class="btn btn-prev">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
@@ -66,13 +80,12 @@
       <script src="scripts/utils/LightBox.js"></script>
       <script src="scripts/utils/Likes.js"></script>
       <script src="scripts/utils/MediasSort.js"></script>
+      <script src="scripts/utils/contactForm.js"></script>
 
       <!--Api-->
-    <script src="scripts/api/Api.js"></script>
+      <script src="scripts/api/Api.js"></script>
 
-    <!--Entry point-->
-    <script src="scripts/Index.js"></script>
-    <!-- <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script> -->
+      <!--Entry point-->
+      <script src="scripts/Index.js"></script>
   </body>
 </html>

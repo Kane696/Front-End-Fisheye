@@ -60,13 +60,13 @@
     border-radius: 5px;
 }
 
-#media-select:focus {
+/* #media-select:focus {
     outline: none;
-}
+} */
 
-#media-select option{
+/* #media-select option{
     border-bottom: 1px solid white;
-}
+} */
 
 /************
 ****** PHOTOGRAPHER PORTFOLIO
@@ -187,7 +187,7 @@
     color: black;
 }
 
-.lightbox-modal{
+/* .lightbox-modal{
     border-radius: 5px;
     background-color: #FFFFFF;
     width: 35%;
@@ -198,7 +198,7 @@
     justify-content: space-between;
     padding: 20px;
     margin: auto;
-}
+} */
 
 form {
     display: flex;
@@ -267,6 +267,12 @@ form textarea {
     z-index: 10px;
     cursor: pointer;
     border: none;
+    background-color: #FFFFFF;
+}
+
+.lightbox-modal .btn i,
+.slide p {
+    color: #901C1C;
 }
 
 .close-lightbox__btn {
@@ -282,6 +288,7 @@ form textarea {
     top: 45%;
     left: 2%;
 }
+
 
 .lightbox-modal .btn-next {
     top: 45%;
@@ -315,4 +322,9 @@ form textarea {
 
 .photographer-encart__likes {
     margin-left: 7px;
+}
+
+
+.no-scroll {
+    overflow: hidden;
 }

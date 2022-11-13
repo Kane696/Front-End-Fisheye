@@ -1,20 +1,20 @@
 const body = document.querySelector("#body");
 
 const modal = document.querySelector(".modal");
-const myModal = document.querySelector('#myModal');
-const modalTitle = document.querySelector("#modal-title");
-const openModalBtn = document.querySelector('.open-modal__btn');
-const closeModalBtn = document.querySelector('.close-modal__btn');
-const submitBtn = document.querySelector('#submit__btn');
+const myModal = document.querySelector("#myModal");
+// const modalTitle = document.querySelector("#modal-title");
+const openModalBtn = document.querySelector("#open-modal__btn");
+const closeModalBtn = document.querySelector(".close-modal__btn");
+// const submitBtn = document.querySelector("#submit__btn");
 
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 const firstName = document.getElementById("prenom");
 const lastName = document.querySelector("#nom");
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
 
 // add all the elements inside modal which you want to make focusable
-const  focusableElements = 'button, input, textarea, [tabindex]:not([tabindex="-1"])';
+const  focusableElements = "button, input, textarea, [tabindex]:not([tabindex='-1'])";
 
 // Get first element to be focused inside modal
 const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
@@ -24,13 +24,13 @@ const focusableContent = modal.querySelectorAll(focusableElements);
 const lastFocusableElement = focusableContent[focusableContent.length - 1];
 
 // Open modal when button is clicked
-openModalBtn.addEventListener('click', openModal);
+openModalBtn.addEventListener("click", openModal);
 
 // Close modal when button is clicked
-closeModalBtn.addEventListener('click', closeModal);
+closeModalBtn.addEventListener("click", closeModal);
 
 // Close modal when escape key is pressed
-document.addEventListener('keydown', (e) => {
+document.addEventListener("keydown", (e) => {
     const keyCode = e.keyCode ? e.keyCode : e.which
     if (keyCode === 27) {
         closeModal();
@@ -38,11 +38,11 @@ document.addEventListener('keydown', (e) => {
 });
 
 function openModal(){
-    body.classList.add('no-scroll');
+    body.classList.add("no-scroll");
     myModal.style.display = "block";
 
-    document.addEventListener('keydown', function(e) {
-        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+    document.addEventListener("keydown", function(e) {
+        let isTabPressed = e.key === "Tab" || e.keyCode === 9;
         if (!isTabPressed) {
             return;
         }
@@ -74,10 +74,10 @@ function closeModal() {
 }
 
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
     if(formIsValid()){
-        console.log(data);
+        console.log(this.data);
         setTimeout(function(){
             closeModal();
         }, 950);
@@ -114,7 +114,7 @@ function validateEmail(email){
     let validMail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+).[a-zA-Z0-9-]*$/;
 
     if(validMail.test(email.value) === false){
-        displayError(email, 'Vous devez enter une adresse mail valide');
+        displayError(email, "Vous devez enter une adresse mail valide");
         return false;
     } else {
         displaySuccess(email);
@@ -135,7 +135,7 @@ function validateMessage(message){
 // Display errors message
 function displayError(input, msg){
     // display error border
-    input.parentElement.dataset.errorVisible = "true"
+    input.parentElement.dataset.errorVisible = "true";
 
     // display error msg
     input.parentElement.dataset.error = msg;
@@ -152,7 +152,7 @@ function displaySuccess(input){
 const formIsValid = () => {
     let firstnameIsVaild = validateFirstname(firstName),
     lastnameIsValid = validateLastname(lastName),
-    emailIsValid = validateEmail(email);
+    emailIsValid = validateEmail(email),
     messageIsValid = validateMessage(message);
 
     let fielsIsValid = firstnameIsVaild && lastnameIsValid && emailIsValid && messageIsValid;
@@ -163,7 +163,7 @@ const formIsValid = () => {
             lastName: lastName.value,
             email: email.value,
             message: message.value
-        }
-        return data;
+        };
+        return this.data;
     }
-}
+};

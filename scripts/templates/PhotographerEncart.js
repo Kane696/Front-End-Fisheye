@@ -1,6 +1,6 @@
 class PhotographerEncart {
     constructor(photographer){
-        this._photographer = photographer
+        this._photographer = photographer;
     }
 
     getPhotographerEncartDOM(){
@@ -9,16 +9,16 @@ class PhotographerEncart {
 
         // Get all medias likes
         this._photographer.medias.forEach(media => {
-            likes.push(media.likes)
+            likes.push(media.likes);
         }); 
 
         // Get array sum
         likes.forEach(like => {
-            sum += like
-        })
+            sum += like;
+        });
 
-        const div = document.createElement( 'div' );
-        div.classList.add('photographer-encart');
+        const div = document.createElement( "div");
+        div.classList.add("photographer-encart");
         const photographerEncart = `
             <div class="media-likes">
                 <p class="likes-sum">${sum}</p>
@@ -27,7 +27,7 @@ class PhotographerEncart {
             <div>
                 <p>${this._photographer.price}€/jour</p>
             </div>
-        `
+        `;
         div.innerHTML = photographerEncart;
         return div;
     }

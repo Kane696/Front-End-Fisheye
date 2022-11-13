@@ -1,50 +1,31 @@
 class MediasSort {
     constructor(photographer) {
-        this._photographer = photographer
+        this._photographer = photographer;
         this._photographerSectionPortfolio = document.querySelector(".photographer-section__portfolio");
-        this._mediaSelect = document.querySelector('#media-select');
+        this._mediaSelect = document.querySelector("#media-select");
     }
 
     getSelectValue () {
-        this._mediaSelect.addEventListener('change', (e) => {
-            if(e.target.value === 'popularité') {
-                this.sortMedias(this._photographer.medias, true);
-                //.reverse()
+        this._mediaSelect.addEventListener("change", (e) => {
+            if(e.target.value === "popularité") {
+                this._photographer.medias.sort(function(a, b) {
+                    return (a.likes < b.likes) ? -1: 1;
+                }).reverse();
                 this.getNewPhotographerMedias(this._photographer.medias);
-            } else if(e.target.value === 'titre') {
-                this.sortMedias(this._photographer.medias, false);
+            } else if(e.target.value === "titre") {
+                this._photographer.medias.sort(function(a, b) {
+                    return (a.title < b.title) ? -1: 1;
+                });
                 this.getNewPhotographerMedias(this._photographer.medias);
-            } else if(e.target.value === 'date') {
-                this.sortMedias(this._photographer.medias, true);
+            } else if(e.target.value === "date") {
+                this._photographer.medias.sort(function(a, b) {
+                    return (a.date < b.date) ? -1: 1;
+                }).reverse();
                 this.getNewPhotographerMedias(this._photographer.medias);
             } else {
                 this.getNewPhotographerMedias(this._photographer.medias);
             }
         });
-    }
-
-    sortMedias(medias,reverse) {
-        if(reverse === true) {
-            medias.sort(function(a, b) {
-                if(a.likes < b.likes) {
-                    return -1;
-                }
-                if(a.likes > b.likes) {
-                    return 1;
-                }
-                return 0;
-            }).reverse();
-        } else {
-            medias.sort(function(a, b) {
-                if(a.likes < b.likes) {
-                    return -1;
-                }
-                if(a.likes > b.likes) {
-                    return 1;
-                }
-                return 0;
-            });
-        }
     }
     
     getNewPhotographerMedias(medias) {
