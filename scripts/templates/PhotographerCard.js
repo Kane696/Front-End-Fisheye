@@ -6,11 +6,11 @@ class PhotographerCard {
     getUserCardDOM(){
         const article = document.createElement( "article" );
         const photographerCard = `
-            <a href="http://127.0.0.1:5500/photographer.html?id=${this._photographer.id}">
+            <a href="https://kane696.github.io/Front-End-Fisheye/photographer.html?id=${this._photographer.id}">
                 <picture>
-                    <source type="image/webp" srcset="/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait.split(".")[0] + ".webp"}">
-                    <source type="image/jpeg" srcset="/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait}">
-                    <img src="/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait}" class="photographer-portrait" alt="${this._photographer.name}"/>
+                    <source type="image/webp" srcset="/Front-End-Fisheye/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait.split(".")[0] + ".webp"}">
+                    <source type="image/jpeg" srcset="/Front-End-Fisheye/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait}">
+                    <img src="/Front-End-Fisheye/assets/photographers/Photographers-ID-Photos/${this._photographer.portrait}" class="photographer-portrait" alt="${this._photographer.name}"/>
                 </picture>
                 <h2 class="photographer-name">${this._photographer.name}</h2>
             </a>
