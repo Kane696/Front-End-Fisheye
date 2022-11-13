@@ -6,8 +6,8 @@ class Index {
         this.photographerSectionPortfolio  = document.querySelector(".photographer-section__portfolio");
         this.main = document.querySelector("#main");
         this.lightBox  = document.querySelector("#lightbox");
-        this.photographerApi = new PhotographerApi("./data/photographers.json");
-        this.mediasApi = new MediasApi("./data/photographers.json");
+        this.photographerApi = new PhotographerApi("/Front-End-Fisheye/data/photographers.json");
+        this.mediasApi = new MediasApi("/Front-End-Fisheye/data/photographers.json");
     }
 
     async init() {
